@@ -1,0 +1,37 @@
+{
+  "bindings": [
+    {
+      "name": "blobInput",
+      "type": "blobTrigger",
+      "direction": "in",
+      "dataType": "binary",
+      "path": "xls/in/{fileName}",
+      "connection": "validatexls_STORAGE"
+    },
+    {
+      "name": "validOutput",
+      "type": "blob",
+      "direction": "out",
+      "dataType": "binary",
+      "path": "xls/valid/{rand-guid}-{fileName}",
+      "connection": "validatexls_STORAGE"
+    },
+    {
+      "name": "invalidOutput",
+      "type": "blob",
+      "direction": "out",
+      "dataType": "binary",
+      "path": "xls/invalid/{rand-guid}-{fileName}",
+      "connection": "validatexls_STORAGE"
+    },
+    {
+      "name": "errorsOutput",
+      "type": "blob",
+      "direction": "out",
+      "dataType": "string",
+      "path": "xls/invalid/{rand-guid}-{fileName}-errors.txt",
+      "connection": "validatexls_STORAGE"
+    }
+  ],
+  "disabled": false
+}
